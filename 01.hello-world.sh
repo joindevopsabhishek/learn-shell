@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "first time"`
+echo "first time"
