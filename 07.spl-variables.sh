@@ -8,3 +8,9 @@ echo "realpath: $(realpath $0)"
 echo "directory of present script: $PWD"
 echo "pid of current script: $$"
 echo "home directory of current user: $HOME"
+sleep 10 &
+echo "pid of the command runnin in background now: $!"
+wait $! #scripts waits until $! command complete
+echo "line number: $LINENO"
+echo "previous command exit status: $?"
+echo "total time executed for this script: $SECONDS"
