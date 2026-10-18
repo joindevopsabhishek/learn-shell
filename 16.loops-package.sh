@@ -8,23 +8,23 @@ echo "please run this script with sudo access"
 exit 1
 fi
 mkdir -p $logs_folder #p folder exits then it won't create
-echo "script started execution: $(date +"%F %T")"
+echo "script started execution: $(date +"%F %T")" &>> $logs_file
 validate(){
     if [ $1 -ne 0 ]; then
-echo "${2} failed" | tee -a $logs_file
-exit 1
-else 
-echo "${2} sucess" | tee -a $logs_file
-fi
+       echo "${2} failed" | tee -a $logs_file
+       exit 1
+    else 
+       echo "${2} sucess" | tee -a $logs_file
+    fi
 }
 for package in $@
 do
-dnf list installed $package &>> $logs_file
-if [ $? -ne 0 ]; then
-echo "going to install: ${package}"
-dnf install $package -y &>> $logs_file
-validate $? "installing ${package}"
-else
-echo "${package} already installed...skipping"
-fi
+  dnf list installed $package &>> $logs_file
+  if [ $? -ne 0 ]; then
+  echo "going to install: ${package}"
+  dnf install $package -y &>> $logs_file
+  validate $? "installing ${package}"
+  else
+    echo "${package} already installed...skipping"
+  fi
 done
