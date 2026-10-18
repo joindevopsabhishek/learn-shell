@@ -1,2 +1,4 @@
 #!/bin/bash
-export course="shell script"
+echo "$COURSE
+echo "$DURATION
+echo "$TRAINER"
