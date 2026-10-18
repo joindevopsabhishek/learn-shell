@@ -7,3 +7,5 @@ echo "$TRAINER"
 # this is for only same user
 # if you want all users edit /etc/profile.d/*.sh
 # enter export there and restart the server to effect of these variables
+# environment varibles should be in capital letters
+# with in the script snake case like join-devops
