@@ -9,3 +9,4 @@ echo "$TRAINER"
 # enter export there and restart the server to effect of these variables
 # environment varibles should be in capital letters
 # with in the script snake case like join-devops
+# to know environment variables use env
