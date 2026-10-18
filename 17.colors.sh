@@ -15,10 +15,10 @@ mkdir -p $logs_folder #p folder exits then it won't create
 echo "script started execution: $(date +"%F %T")" &>> $logs_file
 validate(){
     if [ $1 -ne 0 ]; then
-       echo -e "${2} failed" | tee -a $logs_file
+       echo -e "${2}..${R}failed${N}" | tee -a $logs_file
        exit 1
     else 
-       echo -e "${2} sucess" | tee -a $logs_file
+       echo -e "${2}..${G}sucess${N}" | tee -a $logs_file
     fi
 }
 for package in $@
@@ -27,7 +27,7 @@ do
   if [ $? -ne 0 ]; then
   echo "going to install: ${package}"
   dnf install $package -y &>> $logs_file
-  validate $? "installing ${package}"
+  validate $? "installing ${package}.."
   else
     echo -e "${package} already installed...${Y}skipping${N}"
   fi
