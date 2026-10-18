@@ -13,3 +13,4 @@ echo "first class"
 else
 echo "distinction"
 fi
+echo "end"
