@@ -17,7 +17,6 @@ else
 echo "${2} sucess" | tee -a $logs_file
 fi
 }
-echo "processing"
 dnf install nginx -y &>> $logs_file
 validate $? "nginx installation"
 dnf install mysql -y &>> $logs_file
