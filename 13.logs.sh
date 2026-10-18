@@ -1,5 +1,5 @@
 #!/bin/bash
-#!/bin/bash
+
 userid=$(id -u)
 logs_folder="/var/log/shell-practice"
 logs_file="${logs_folder}/${0}.log"
