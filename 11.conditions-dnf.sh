@@ -5,4 +5,10 @@ echo "please run this script with sudo access"
 exit 1
 fi
 echo "processing"
-dnf install nginx -y
+dnf install nginxxx -y
+if [ $? -ne 0]; then
+echo "nginx install is failed"
+exit 1
+else 
+echo "nginx installation sucess"
+fi
