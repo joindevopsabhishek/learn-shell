@@ -6,7 +6,7 @@ exit 1
 fi
 echo "processing"
 dnf install nginxxx -y
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
 echo "nginx install is failed"
 exit 1
 else 
