@@ -12,3 +12,4 @@ echo "count is: $COUNT"
 FRUITS=("APPLE" "BANANA" "CHERRY")
 echo "all fruits: ${FRUITS[@]}"
 echo "first fruit: ${FRUITS[0]}"
+echo "second fruit: ${FRUITS[1]}"
